@@ -429,6 +429,7 @@ module.exports = function (webpackEnv) {
                       },
                     },
                   ],
+                    'react-html-attrs', //解决clasName的问题
                   isEnvDevelopment &&
                     shouldUseReactRefresh &&
                     require.resolve('react-refresh/babel'),
@@ -478,19 +479,38 @@ module.exports = function (webpackEnv) {
             // By default we support CSS Modules with the extension .module.css
             {
               test: cssRegex,
-              exclude: cssModuleRegex,
+              //exclude: cssModuleRegex,
               use: getStyleLoaders({
                 importLoaders: 1,
+                  modules: {
+                      // getLocalIdent: getCSSModuleLocalIdent,
+                      //[path]-[name]-[local]-[hash:base64:6]
+                      localIdentName: '[local]__[hash:base64:6]', //自动生成模块化后的名称
+                  },
                 sourceMap: isEnvProduction
                   ? shouldUseSourceMap
                   : isEnvDevelopment,
               }),
+                exclude:[//3、排除文件夹下面的css文件
+                    path.join(__dirname, '..', 'node_modules'),
+                    path.join(__dirname, '..','src/assets/css/common'),
+                    // path.join(__dirname, '..','src/components')
+                ],
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
               // Remove this when webpack adds a warning or an error for this.
               // See https://github.com/webpack/webpack/issues/6571
               sideEffects: true,
             },
+              {//允许这些文件夹不模块化
+                  test:cssRegex,
+                  use:['style-loader','css-loader'],
+                  include:[
+                      path.join(__dirname, '..', 'node_modules'),
+                      path.join(__dirname, '..','src/assets/css/common'),
+                      // path.join(__dirname, '..','src/components')
+                  ]
+              },
             // Adds support for CSS Modules (https://github.com/css-modules/css-modules)
             // using the extension .module.css
             {
@@ -501,9 +521,12 @@ module.exports = function (webpackEnv) {
                   ? shouldUseSourceMap
                   : isEnvDevelopment,
                 modules: {
-                  getLocalIdent: getCSSModuleLocalIdent,
+                  // getLocalIdent: getCSSModuleLocalIdent,
+                    //[path]-[name]-[local]-[hash:base64:6]
+                    localIdentName: '[local]__[hash:base64:6]', //自动生成模块化后的名称
                 },
-              }),
+              })
+
             },
             // Opt-in support for SASS (using .scss or .sass extensions).
             // By default we support SASS Modules with the
