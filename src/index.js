@@ -1,8 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/common/public.css';
-import App from './App';
+import RouterComponent from './router';
 import reportWebVitals from './reportWebVitals';
+
+function App(){
+    return(
+        <React.Fragment>
+            <RouterComponent></RouterComponent>
+        </React.Fragment>
+    )
+}
 
 ReactDOM.render(
   <React.StrictMode>

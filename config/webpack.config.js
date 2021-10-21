@@ -129,6 +129,13 @@ module.exports = function (webpackEnv) {
             require('postcss-preset-env')({
               autoprefixer: {
                 flexbox: 'no-2009',
+                  //配置css兼容性
+                  "overrideBrowserslist": [
+                      'last 10 Chrome versions',
+                      'last 5 Firefox versions',
+                      'Safari >= 6',
+                      'ie> 8'
+                  ]
               },
               stage: 3,
             }),
