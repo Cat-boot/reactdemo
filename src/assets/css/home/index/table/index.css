@@ -1,0 +1,10 @@
+.Table{
+    margin-top: 5px;
+}
+
+.Table :global(.bg-row){
+    background: #fafafa;
+}
+.Table :global(.ant-table-thead tr th.asd:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before){
+    display: none;
+}

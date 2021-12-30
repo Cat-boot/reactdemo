@@ -1,0 +1,92 @@
+.topNav{
+    width: 100%;
+    min-width: 1200px;
+    padding: 0 15px;
+    height: 60px;
+    background: rgba(0,0,0,0.9);
+    overflow: hidden;
+}
+.topNavLogo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    align-content: center;
+    align-content: center;
+}
+.topNavLogo img{
+   width: 100%;
+}
+.topNav .antdMenu{
+    height: 60px;
+    background: none;
+    line-height: 60px;
+    color: rgb(227, 227, 230);
+    border-bottom: 0 none;
+}
+
+.topNav :global(.ant-menu-horizontal:not(.ant-menu-dark) .ant-menu-item-selected ){
+    color: rgb(255, 208, 75);
+}
+
+.topNav :global( .ant-menu-horizontal:not(.ant-menu-dark) .ant-menu-item-selected::after){
+    border-bottom: 2px solid rgb(255, 208, 75);
+}
+.topNav :global(.ant-menu-horizontal:not(.ant-menu-dark) .ant-menu-item:hover){
+    color: rgb(255, 208, 75);
+}
+.topNav :global(.ant-menu-horizontal:not(.ant-menu-dark) .ant-menu-item:hover::after){
+    border-bottom: 2px solid rgb(255, 208, 75);
+}
+
+.userBox{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+.userName{
+    font-size: 14px;
+    color: rgb(227, 227, 230);
+    width: 30px;
+}
+.topNavIcn{
+    font-size: 18px;
+    color:  rgb(227, 227, 230);
+    margin-left: 5px;
+}
+.PopoverContent{
+    min-width: 50px;
+
+}
+.PopoverContentLi{
+    display: flex;
+    align-content: center;
+    font-size: 14px;
+    padding: 3px 8px;
+    color: #606266;
+    cursor: pointer;
+    margin: 5px 0;
+    border-radius: 2px;
+}
+
+.userIcn{
+    font-size: 24px;
+    color:  #606266;
+    margin-right: 5px;
+}
+.userPopover{
+    min-width: 130px;
+
+}
+.userPopover :global(.ant-popover-inner-content){
+    padding: 8px;
+}
+.PopoverContentLi:hover{
+    background-color: rgb(255, 208, 75);
+    color: #fff;
+}
+.PopoverContentLi:hover .userIcn{
+    color: #fff;
+}

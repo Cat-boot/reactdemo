@@ -1,0 +1,48 @@
+/*noinspection ALL*/
+.scrollNav {
+    height: 850px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.scrollNav .rightNav {
+  background: none;
+  border: 0 none;
+}
+
+.rightNavIcn {
+  font-size: 16px;
+  color: #909399;
+}
+
+
+
+.rightNav :global(.ant-menu-submenu-inline .ant-menu-submenu-arrow::before) {
+  width: 8px;
+  height: 1px;
+  transform: rotate(-45deg) translateX(4.5px);
+}
+
+.rightNav :global(.ant-menu-submenu-inline .ant-menu-submenu-arrow::after) {
+  width: 8px;
+  height: 1px;
+  transform: rotate(45deg) translateX(-4.5px);
+}
+
+.rightNav :global(.ant-menu-submenu-inline .ant-menu-submenu-arrow) {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.rightNav
+  :global(.ant-menu-submenu-inline.ant-menu-submenu-open
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::before) {
+  transform: rotate(45deg) translateX(4.5px);
+}
+
+.rightNav
+  :global(.ant-menu-submenu-inline.ant-menu-submenu-open
+    > .ant-menu-submenu-title
+    > .ant-menu-submenu-arrow::after) {
+  transform: rotate(-45deg) translateX(-4.5px);
+}

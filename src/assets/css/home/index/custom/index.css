@@ -1,0 +1,27 @@
+.customMain{
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    border: 1px solid #EBEEF5;
+    border-radius: 4px;
+    padding: 15px;
+}
+.customBox{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.customItem{
+    height: 63px;
+    line-height: 63px;
+    color: #ff8000;
+    background-color: #ffead6;
+    border: 1px solid #ffa64d;
+    margin-right: 15px;
+    padding: 0 15px;
+    border-radius: 5px;
+    max-width: 200px;
+    margin-bottom: 15px;
+}

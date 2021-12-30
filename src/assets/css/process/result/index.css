@@ -1,0 +1,4 @@
+.dividerPadding:global(.ant-divider-horizontal.ant-divider-with-text){
+    margin: 1px 0;
+    width: 100%;
+}

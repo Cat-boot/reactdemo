@@ -1,0 +1,31 @@
+.indTitleBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.indTitleFont{
+    font-size: 14px;
+    color: #303133;
+}
+.indTitleMore{
+    font-size: 14px;
+    color: #303133;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.indTitleIcn{
+    font-size: 24px;
+}
+.borderBlue{
+    border-bottom: 1px solid #2089ff;
+}
+.borderOrigin{
+    border-bottom: 1px solid #ff8000;
+}
+.borderGreen{
+    border-bottom: 1px solid #47c978;
+}
+.borderPurple{
+    border-bottom: 1px solid #5f59d7;
+}

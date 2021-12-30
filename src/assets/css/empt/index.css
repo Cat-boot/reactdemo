@@ -1,0 +1,17 @@
+.tableEmpt{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 308px;
+    flex-wrap: wrap;
+}
+.tableEmptIcn{
+    font-size: 70px;
+    color: rgba(241, 241, 241, 0.3);
+}
+.tableEmptFont{
+    font-size: 14px;
+    color: #e1e1e1;
+    width: 100%;
+    text-align: center;
+}

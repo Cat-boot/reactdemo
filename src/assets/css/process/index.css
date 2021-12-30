@@ -1,0 +1,17 @@
+.processBox{
+    display: flex;
+    align-items: flex-start;
+    justify-items: flex-start;
+    padding-top: 20px;
+    background: #ffffff;
+    min-width: 1200px;
+}
+.processBox .processItemNav{
+    height: 850px;
+    background: rgb(240, 240, 240);
+    overflow: hidden;
+}
+.processItemSearch{
+    height: 850px;
+    padding: 0 20px;
+}

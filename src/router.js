@@ -7,23 +7,43 @@ Link:跳转页面，相当于vue里面的router-link
 exact :完全匹配路由
 Redirect:路由重定向
 */
-import React,{lazy,Suspense} from "react";
-import {BrowserRouter as Router,Route}from 'react-router-dom';
-const indexPage=lazy(()=>import('./pages/index/index'))
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-class RouterComponent extends React.Component{
-    render() {
-        return(
-            <React.Fragment>
-                <Router>
-                    <React.Fragment>
-                        <Suspense fallback={<div className='loading'></div>}>
-                            <Route path='/' exact component={indexPage}/>
-                        </Suspense>
-                    </React.Fragment>
-                </Router>
-            </React.Fragment>
-        )
-    }
+// import { AuthRoute } from "./routes/private";  //会员登录认证
+const TopNav = lazy(() => import("./commonents/nav"));
+const indexPage = lazy(() => import("./pages/home/index/index"));
+const myAppPage = lazy(() => import("./pages/home/myApp"));
+const processPage = lazy(() => import("./pages/process"));
+
+class RouterComponent extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Router>
+          <React.Fragment>
+            <Switch>
+              <Suspense fallback={<div className="loading" id="loading"></div>}>
+                <Route path={window.base.config.path} component={TopNav} />
+                <Route
+                  path={window.base.config.path + "home/index"}
+                  component={indexPage}
+                />
+                <Route
+                  path={window.base.config.path + "home/myapp"}
+                  component={myAppPage}
+                />
+                <Route
+                  path={window.base.config.path + "process"}
+                  component={processPage}
+                />
+                {/*<AuthRoute path="/user" component={UserPage}></AuthRoute>*/}
+              </Suspense>
+            </Switch>
+          </React.Fragment>
+        </Router>
+      </React.Fragment>
+    );
+  }
 }
-export default RouterComponent
+export default RouterComponent;
