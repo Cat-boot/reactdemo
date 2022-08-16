@@ -7,6 +7,7 @@ let config=require('./config');
                 iScrollTop:0
             }
         }
+
     };
     module.exports=window.base;
 })(window)

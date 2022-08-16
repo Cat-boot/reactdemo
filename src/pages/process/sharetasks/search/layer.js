@@ -77,8 +77,6 @@ const LayerCreateForm = (props) => {
       address: "Sidney No. 1 Lake Park",
     },
   ];
-
-  const cancel = () => {};
   return (
     <Modal
       visible={visible}
@@ -93,7 +91,7 @@ const LayerCreateForm = (props) => {
         form={layerForm}
         name="form_in_modal"
         labelCol={{ span: 4 }}
-        onFinish={layerOnFinish}
+        onFinish={layerOnFinish.bind(this)}
       >
         <Row gutter={20} align={"right"}>
           <Col span={8}>
@@ -130,15 +128,12 @@ const LayerCreateForm = (props) => {
       <Table
         rowSelection={{
           type: "radio",
-          selectedRowKeys: selectedRowKeys,
           onChange: rowSelection,
+          selectedRowKeys: selectedRowKeys,
         }}
         columns={columns}
         dataSource={data}
         scroll={{ y: "30vh", x: "100%" }}
-        pagination={{
-          onChange: cancel,
-        }}
       />
     </Modal>
   );

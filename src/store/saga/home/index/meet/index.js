@@ -5,7 +5,10 @@ function* sagaMeet() {
     yield take("MEET");
     let payload = yield call(servMeet);
     let data = [];
-    if (payload.status === "200") {
+      if (payload.code === 200) {
+          for (let i in payload.data){
+              payload.data[i].key=i;
+          }
       data = payload.data;
     }
     yield put({ type: "meet", data: { aMeet: data } });

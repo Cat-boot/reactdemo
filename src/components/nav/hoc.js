@@ -5,8 +5,10 @@ function hoc(WithComponent) {
     constructor() {
       super();
       this.state = {
-        selectedKeys: [],
-        openKeys: [],
+          selectedKeys: [],
+          openKeys: [],
+          isLogin:false,
+          isModalVisible:true
       };
     }
     componentDidMount() {
@@ -79,6 +81,7 @@ function hoc(WithComponent) {
     pronto = () => {
       if (
         this.props.location.pathname === window.base.config.path ||
+        this.props.location.pathname + "/" === window.base.config.path ||
         this.props.location.pathname === window.base.config.path + "home" ||
         this.props.location.pathname === window.base.config.path + "home/"
       ) {
@@ -107,11 +110,24 @@ function hoc(WithComponent) {
         );
       }
     };
+    //跳转页面
+      goPage = (v) =>{
+          switch (v){
+              case 'logo':
+                  return (
+                     this.props.history.replace(window.base.config.path+'login')
+                  );
+              default :
+                  return null;
+          }
+      }
     render() {
       let newProps = {
-        handleClick: this.handleClick.bind(this),
-        selectedKeys: this.state.selectedKeys,
-        openKeys: this.state.openKeys,
+          handleClick: this.handleClick.bind(this),
+          goPage:this.goPage.bind(this),
+          selectedKeys: this.state.selectedKeys,
+          openKeys: this.state.openKeys,
+          isLogin: this.state.isLogin,
       };
       return <WithComponent {...this.props} {...newProps}></WithComponent>;
     }

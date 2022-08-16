@@ -3,7 +3,7 @@ import Css from "../../../../assets/css/home/index/custom/index.css";
 import hoc from "./hoc";
 import IndexTitle from "../titie";
 const customComponent = hoc((props) => {
-  let newProps = { title: "常用应用", more: "更多", url: "custom" };
+    let newProps = { title: "常用应用", more: "更多", url: "custom" };
   return (
     <div className={Css["customMain"]}>
       <IndexTitle {...props} {...newProps} />
@@ -19,7 +19,8 @@ const customComponent = hoc((props) => {
                 {item.title}
               </div>
             );
-          })}
+          })
+        }
       </div>
     </div>
   );

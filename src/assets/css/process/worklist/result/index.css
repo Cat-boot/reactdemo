@@ -1,0 +1,7 @@
+.resultBox{
+    margin-top: 20px;
+}
+
+.resultBox :global(.ant-table-thead tr th) {
+   background: #f7f7f7;
+}

@@ -1,6 +1,6 @@
 import React from "react";
-import WorkListSearch from "./search";
-import WorkResult from "./result";
+import ShareSearch from "./search";
+import ShareResult from "./result";
 
 class worklist extends React.Component {
   render() {
@@ -9,8 +9,8 @@ class worklist extends React.Component {
     };
     return (
       <div>
-        <WorkListSearch {...this.props} {...newProps.search} />
-        <WorkResult />
+        <ShareSearch {...this.props} {...newProps.search} />
+        <ShareResult />
       </div>
     );
   }

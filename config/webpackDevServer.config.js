@@ -104,7 +104,7 @@ module.exports = function (proxy, allowedHost) {
     // proxy,
     proxy: {
       "/api": {
-        target: "http://127.0.0.1:3001/mock/18/api/",
+        target: "http://127.0.0.1:3001/mock/19/api/",
         changeOrigin: true, //是否跨域，如果target是域名则需要配置，如果是ip地址不需要
         pathRewrite: {
           "^/api": "", //需要rewrite的,
@@ -117,6 +117,13 @@ module.exports = function (proxy, allowedHost) {
           "^/sapi": "", //需要rewrite的,
         },
       },
+        "/wapi": {
+            target: "https://gitee.com/",
+            changeOrigin: true, //是否跨域，如果target是域名则需要配置，如果是ip地址不需要
+            pathRewrite: {
+                "^/wapi": "", //需要rewrite的,
+            },
+        },
     },
     before(app, server) {
       // Keep `evalSourceMapMiddleware` and `errorOverlayMiddleware`

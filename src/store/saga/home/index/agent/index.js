@@ -5,7 +5,10 @@ function* sagaAgent() {
     yield take("AGENT");
     let payload = yield call(getAgentData);
     let data = [];
-    if (payload.status === "200") {
+    if (payload.code === 200) {
+        for (let i in payload.data){
+            payload.data[i].key=i;
+        };
       data = payload.data;
     }
     yield put({ type: "agent", data: { aAgent: data } });

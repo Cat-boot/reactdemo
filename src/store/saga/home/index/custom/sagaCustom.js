@@ -4,11 +4,11 @@ function* sagaCustom() {
   while (true) {
     yield take("CUSTOM");
     let payload = yield call(getCustomData);
-    let data = [];
-    if (payload.status === "200") {
+      let data = [];
+    if (payload.code === 200) {
       data = payload.data;
     }
-    yield put({ type: "custom", data: { aCustom: data } });
+      yield put({ type: "custom", data: { aCustom: data } });
   }
 }
 let aFork = [fork(sagaCustom)];

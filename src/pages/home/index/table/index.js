@@ -1,7 +1,7 @@
 import React from "react";
 import { Table, ConfigProvider } from "antd";
 import Css from "../../../../assets/css/home/index/table/index.css";
-import EmptyComponent from "../../../../commonents/empt";
+import EmptyComponent from "../../../../components/empt";
 
 const customizeRenderEmpty = () => <EmptyComponent />;
 const TableComponent = (props) => {

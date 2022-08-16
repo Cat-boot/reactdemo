@@ -3,11 +3,11 @@ import { Menu } from "antd";
 import { Scrollbars } from "react-custom-scrollbars";
 import hoc from "./hoc";
 import Css from "../../../assets/css/process/leftNav/index.css";
-import IconFont from "../../../commonents/iconfont";
+import IconFont from "../../../components/iconfont";
 
 const { SubMenu } = Menu;
 const rightNav = hoc((props) => {
-  // console.log(props.openKeys);
+    // console.log(props.openKeys);
   return (
     <Scrollbars id="scrollClassify" className={Css["scrollNav"]}>
       <Menu

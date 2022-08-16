@@ -1,5 +1,5 @@
 import React from "react";
-import EmptyComponent from "../../../commonents/empt";
+import EmptyComponent from "../../../components/empt";
 class myAppPage extends React.Component {
   constructor() {
     super();

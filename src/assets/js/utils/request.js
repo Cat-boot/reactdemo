@@ -6,15 +6,15 @@ import axios from "axios";
 export default function request(
   url,
   method = "get",
-  headersConfig = {},
   data = {},
+  headersConfig = {},
   config = {}
 ) {
   // showLoad();
-  return axiosRequest(url, method, headersConfig, data, config);
-  // return fetchRequest(url, method, headersConfig, data);
+  return axiosRequest(url, method, data, headersConfig, config);
+  // return fetchRequest(url, method, data, headersConfig);
 }
-function axiosRequest(url, method, headersConfig, data, config) {
+function axiosRequest(url, method, data, headersConfig, config) {
   let headers = {};
   if (headersConfig !== undefined) {
     for (let key in headersConfig) {
@@ -50,14 +50,13 @@ function axiosRequest(url, method, headersConfig, data, config) {
       axiosConfig[key] = config[key];
     }
   }
-
   return axios(axiosConfig).then((res) => {
     // hideLoad();
     return res.data;
   });
 }
 //
-// function fetchRequest(url, method, headersConfig, data) {
+// function fetchRequest(url, method, data, headersConfig) {
 //   let fetchConfig = {};
 //   let headers = { "Content-Type": "application/x-www-form-urlencoded" };
 //   if (headersConfig !== undefined) {

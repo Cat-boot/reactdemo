@@ -38,6 +38,7 @@ function hoc(WitchComponent) {
       from.setFieldsValue({
         sponsor: value,
       });
+      // this.layerForm.resetFields();
       this.setState({ visible: !this.state.visible });
     };
     //弹窗表格选中
@@ -51,7 +52,7 @@ function hoc(WitchComponent) {
     layerOnFinish = (values) => {
       console.log(values);
     };
-    //清空表单
+    //清空表格
     resetFields = (form) => {
       form.resetFields();
       if (this.layerForm.resetFields) {

@@ -9,15 +9,17 @@ Redirect:路由重定向
 */
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+// import routers from '../src/routes/routesConfig' //react-loadable组件赖加载
 // import { AuthRoute } from "./routes/private";  //会员登录认证
-const TopNav = lazy(() => import("./commonents/nav"));
+const TopNav = lazy(() => import("./components/nav"));
 const indexPage = lazy(() => import("./pages/home/index/index"));
 const myAppPage = lazy(() => import("./pages/home/myApp"));
 const processPage = lazy(() => import("./pages/process"));
+const login =lazy(()=>import("./pages/login"));
+const personal = lazy(()=>import("./pages/login/personal"))
 
 class RouterComponent extends React.Component {
-  render() {
+    render() {
     return (
       <React.Fragment>
         <Router>
@@ -37,8 +39,20 @@ class RouterComponent extends React.Component {
                   path={window.base.config.path + "process"}
                   component={processPage}
                 />
+                <Route path={window.base.config.path+"login"} component={login} />
+                <Route path={window.base.config.path+"personal"} component={personal} />
                 {/*<AuthRoute path="/user" component={UserPage}></AuthRoute>*/}
               </Suspense>
+                {/*{routers.map((item, key) =>{*/}
+                {/*    return(*/}
+                {/*        <Route*/}
+                {/*            component={item.component}*/}
+                {/*            exact={item.exact}*/}
+                {/*            key={key}*/}
+                {/*            path={window.base.config.path + item.path}*/}
+                {/*        />*/}
+                {/*    )*/}
+                {/*})}*/}
             </Switch>
           </React.Fragment>
         </Router>

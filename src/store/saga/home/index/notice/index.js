@@ -5,8 +5,11 @@ function* sagaNotice() {
     yield take("NOTICE");
     let payload = yield call(servNotice);
     let data = [];
-    if (payload.status === "200") {
-      data = payload.data;
+    if (payload.code === 200) {
+        for (let i in payload.data){
+            payload.data[i].key=i;
+        }
+        data = payload.data;
     }
     yield put({ type: "notice", data: { aNotice: data } });
   }

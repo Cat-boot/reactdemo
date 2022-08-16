@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    cursor: pointer;
 }
 .indTitleIcn{
     font-size: 24px;

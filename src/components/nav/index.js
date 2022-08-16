@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Menu, Popover } from "antd";
+import { Row, Col, Menu, Popover} from "antd";
 import hoc from "./hoc";
 import IconFont from "../iconfont";
 import Css from "../../assets/css/nav/index.css";
@@ -19,7 +19,7 @@ const TopNavComponent = hoc((props) => {
     </div>
   );
   return (
-    <div className={Css["topNav"]}>
+    <nav className={Css["topNav"]}>
       <Row align="middle">
         <Col span={4}>
           <div className={Css["topNavLogo"]}>
@@ -52,23 +52,31 @@ const TopNavComponent = hoc((props) => {
           </Menu>
         </Col>
         <Col span={2}>
-          <Popover
-            overlayClassName={Css["userPopover"]}
-            content={PopoverContent}
-            trigger="click"
-            placement="bottomRight"
-          >
-            <div className={Css["userBox"]}>
-              <div className={Css["userName"]}>张三</div>
-              <IconFont
-                className={Css["topNavIcn"]}
-                type="icon-gatmgr31shezhi"
-              />
-            </div>
-          </Popover>
+            {
+                !props.isLogin?
+                    <div className={Css['loginBOx']}>
+                        <div className={Css['loginIn']+' m5'} onClick={props.goPage.bind(this,'logo')}>登录</div>
+                        <div className={Css['loginIn']+' m5'}>注册</div>
+                    </div>
+                    :
+                    <Popover
+                        overlayClassName={Css["userPopover"]}
+                        content={PopoverContent}
+                        trigger="click"
+                        placement="bottomRight"
+                    >
+                        <div className={Css["userBox"]}>
+                            <div className={Css["userName"]}>张三</div>
+                            <IconFont
+                                className={Css["topNavIcn"]}
+                                type="icon-gatmgr31shezhi"
+                            />
+                        </div>
+                    </Popover>
+            }
         </Col>
       </Row>
-    </div>
+    </nav>
   );
 });
 export default TopNavComponent;

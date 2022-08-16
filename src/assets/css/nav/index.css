@@ -90,3 +90,17 @@
 .PopoverContentLi:hover .userIcn{
     color: #fff;
 }
+.loginBOx{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginIn{
+    font-size: 14px;
+    color: rgba(255,255,255,.5);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.loginIn:hover{
+    color: rgba(255,255,255,1);
+}

@@ -6,6 +6,7 @@ import request from "../../assets/js/utils/request";
 const LeftNav = lazy(() => import("./leftnav"));
 const Search = lazy(() => import("./search"));
 const workList = lazy(() => import("./workList"));
+const sharetasks = lazy(() => import("./sharetasks"));
 const { Sider, Content } = Layout;
 
 class processComponent extends React.Component {
@@ -25,13 +26,14 @@ class processComponent extends React.Component {
     let headersConfig = {
       "X-Authenticated-Userid": "1",
     };
-    request(url, "post", headersConfig).then((res) => {
+    request(url, "post", {}, headersConfig).then((res) => {
       if (res.code === 0) {
         this.setState({ aLeftNav: res.data });
       }
     });
   };
   render() {
+
     let newProps = {
       leftNav: {
         aLeftNav: this.state.aLeftNav,
@@ -53,6 +55,12 @@ class processComponent extends React.Component {
                 <Route
                   path={window.base.config.path + "process/myProcess/workList"}
                   component={workList}
+                />
+                <Route
+                  path={
+                    window.base.config.path + "process/myProcess/shareTasks"
+                  }
+                  component={sharetasks}
                 />
               </Suspense>
             </Switch>

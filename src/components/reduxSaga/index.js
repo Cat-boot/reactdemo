@@ -11,7 +11,7 @@ class Index extends React.Component {
   }
 
   render() {
-    return (
+      return (
       <div>
         <ul>
           {this.props.state.reduxAction.navs.map((item, index) => {

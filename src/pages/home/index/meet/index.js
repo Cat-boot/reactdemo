@@ -24,8 +24,8 @@ const meetComponent = hoc((props) => {
     },
     {
       title: "发起人",
-      dataIndex: "state",
-      key: "state",
+      dataIndex: "author",
+      key: "author",
     },
     {
       title: "会议地点",

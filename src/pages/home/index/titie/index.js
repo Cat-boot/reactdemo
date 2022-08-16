@@ -1,6 +1,6 @@
 import React from "react";
 import hoc from "./hoc";
-import IconFont from "../../../../commonents/iconfont";
+import IconFont from "../../../../components/iconfont";
 import Css from "../../../../assets/css/home/index/title/index.css";
 
 const IndexTitle = hoc((props) => {
